@@ -1,0 +1,487 @@
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai2026}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
+%
+% These are recommended to typeset algorithms but not required. See the subsubsection on algorithms. Remove them if you don't have algorithms in your paper.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%
+% These are are recommended to typeset listings but not required. See the subsubsection on listing. Remove this block if you don't have listings in your paper.
+\usepackage{newfloat}
+\usepackage{listings}
+\usepackage{booktabs} % added to support \toprule / \midrule / \bottomrule
+\usepackage{array} % for better table formatting
+
+% Clean caption styling
+\captionsetup{font=small,labelfont=bf}
+
+\DeclareCaptionStyle{ruled}{labelfont=normalfont,labelsep=colon,strut=off} % DO NOT CHANGE THIS
+\lstset{%
+	basicstyle={\footnotesize\ttfamily},% footnotesize acceptable for monospace
+	numbers=left,numberstyle=\footnotesize,xleftmargin=2em,% show line numbers, remove this entire line if you don't want the numbers.
+	aboveskip=0pt,belowskip=0pt,%
+	showstringspaces=false,tabsize=2,breaklines=true}
+\floatstyle{ruled}
+\newfloat{listing}{tb}{lst}{}
+\floatname{listing}{Listing}
+%
+% Keep the \pdfinfo as shown here. There's no need
+% for you to add the /Title and /Author tags.
+\pdfinfo{
+/TemplateVersion (2026.1)
+}
+
+% DISALLOWED PACKAGES
+% \usepackage{authblk} -- This package is specifically forbidden
+% \usepackage{balance} -- This package is specifically forbidden
+% \usepackage{color (if used in text)
+% \usepackage{CJK} -- This package is specifically forbidden
+% \usepackage{float} -- This package is specifically forbidden
+% \usepackage{flushend} -- This package is specifically forbidden
+% \usepackage{fontenc} -- This package is specifically forbidden
+% \usepackage{fullpage} -- This package is specifically forbidden
+% \usepackage{geometry} -- This package is specifically forbidden
+% \usepackage{grffile} -- This package is specifically forbidden
+% \usepackage{hyperref} -- This package is specifically forbidden
+% \usepackage{navigator} -- This package is specifically forbidden
+% (or any other package that embeds links such as navigator or hyperref)
+% \indentfirst} -- This package is specifically forbidden
+% \layout} -- This package is specifically forbidden
+% \multicol} -- This package is specifically forbidden
+% \nameref} -- This package is specifically forbidden
+% \usepackage{savetrees} -- This package is specifically forbidden
+% \usepackage{setspace} -- This package is specifically forbidden
+% \usepackage{stfloats} -- This package is specifically forbidden
+% \usepackage{tabu} -- This package is specifically forbidden
+% \usepackage{titlesec} -- This package is specifically forbidden
+% \usepackage{tocbibind} -- This package is specifically forbidden
+% \usepackage{ulem} -- This package is specifically forbidden
+% \usepackage{wrapfig} -- This package is specifically forbidden
+% DISALLOWED COMMANDS
+% \nocopyright -- Your paper will not be published if you use this command
+% \addtolength -- This command may not be used
+% \balance -- This command may not be used
+% \baselinestretch -- Your paper will not be published if you use this command
+% \clearpage -- No page breaks of any kind may be used for the final version of your paper
+% \columnsep -- This command may not be used
+% \newpage -- No page breaks of any kind may be used for the final version of your paper
+% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
+% \pagestyle -- This command may not be used
+% \tiny -- This is not an acceptable font size.
+% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
+% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
+
+\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+
+% The file aaai2026.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+
+% Title
+
+% Your title must be in mixed case, not sentence case.
+% That means all verbs (including short verbs like be, is, using,and go),
+% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
+% articles, conjunctions, and prepositions are lower case unless they
+% directly follow a colon or long dash
+\title{AAAI Press Formatting Instructions \\for Authors Using \LaTeX{} --- A Guide}
+\author{
+    %Authors
+    % All authors must be in the same font size and format.
+    Written by AAAI Press Staff\textsuperscript{\rm 1}\thanks{With help from the AAAI Publications Committee.}\\
+    AAAI Style Contributions by Pater Patel Schneider,
+    Sunil Issar,\\
+    J. Scott Penberthy,
+    George Ferguson,
+    Hans Guesgen,
+    Francisco Cruz\equalcontrib,
+    Marc Pujol-Gonzalez\equalcontrib
+}
+\affiliations{
+    %Afiliations
+    \textsuperscript{\rm 1}Association for the Advancement of Artificial Intelligence\\
+    % If you have multiple authors and multiple affiliations
+    % use superscripts in text and roman font to identify them.
+    % For example,
+
+    % Sunil Issar\textsuperscript{\rm 2}, 
+    % J. Scott Penberthy\textsuperscript{\rm 3}, 
+    % George Ferguson\textsuperscript{\rm 4},
+    % Hans Guesgen\textsuperscript{\rm 5}
+    % Note that the comma should be placed after the superscript
+
+    1101 Pennsylvania Ave, NW Suite 300\\
+    Washington, DC 20004 USA\\
+    % email address must be in roman text type, not monospace or sans serif
+    proceedings-questions@aaai.org
+%
+% See more examples next
+}
+
+%Example, Single Author, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\iffalse
+\title{My Publication Title --- Single Author}
+\author {
+    Author Name
+}
+\affiliations{
+    Affiliation\\
+    Affiliation Line 2\\
+    name@example.com
+}
+\fi
+
+\iffalse
+%Example, Multiple Authors, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{My Publication Title --- Multiple Authors}
+\author {
+    % Authors
+    First Author Name\textsuperscript{\rm 1,\rm 2},
+    Second Author Name\textsuperscript{\rm 2},
+    Third Author Name\textsuperscript{\rm 1}
+}
+\affiliations {
+    % Affiliations
+    \textsuperscript{\rm 1}Affiliation 1\\
+    \textsuperscript{\rm 2}Affiliation 2\\
+    firstAuthor@affiliation1.com, secondAuthor@affilation2.com, thirdAuthor@affiliation1.com
+}
+\fi
+
+
+% REMOVE THIS: bibentry
+% This is only needed to show inline citations in the guidelines document. You should not need it and can safely delete it.
+\usepackage{bibentry}
+% END REMOVE bibentry
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report documents a forecasting pipeline applied to five years of daily VIX data. The pipeline includes trend extraction, stationarity testing, ARIMA model selection on first differences, residual diagnostics, conditional heteroskedasticity modeling with a GJR-GARCH, and a rolling 1-day horizon forecast evaluation. Key diagnostics and out-of-sample metrics are reported.
+\end{abstract}
+
+
+\section{Data and Preprocessing}
+The input series is daily VIX values spanning five years. A 30-day moving average (Figure-\ref{fig:ma}) was used for visual trend extraction. Missing values were handled by forward-fill when present. For final training and evaluation, the dataset was split into training and test sets using an 80\%/20\% chronological split for rolling-origin evaluation.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\columnwidth]{images/30_day_ma.png}
+  \caption{VIX series with 30-day moving average trend extraction.}
+  \label{fig:ma}
+\end{figure}
+
+\section{Exploratory Analysis and Stationarity}
+Visual inspection included decomposition into trend, seasonal, and residual components (Figure-\ref{fig:decomp}). Here we use a 365 day seasonal period for decomposition to capture annual patterns in volatility.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\columnwidth]{images/series_decomposition.png}
+  \caption{Trend decomposition of VIX series into trend, seasonal, and residual components.}
+  \label{fig:decomp}
+\end{figure}
+
+
+\subsection{Stationarity tests}
+We plot ACF and PACF for the level and first-differenced series (Figures \ref{fig:acf_level} and \ref{fig:acf_diff}). The level series shows slow decay in ACF, while the differenced series shows more rapid decay, suggesting non-stationarity in levels and stationarity in differences.
+Unit-root tests were applied to the first-differenced series using the Augmented Dickey-Fuller test and the KPSS test (Table \ref{tab:unitroot}). The main results are summarized below.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\columnwidth]{images/series_acf_pacf.png}
+  \caption{ACF and PACF plots of the VIX level series.}
+  \label{fig:acf_level}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\columnwidth]{images/series_diff1_acf_pacf.png}
+  \caption{ACF and PACF plots of the first-differenced VIX series.}
+  \label{fig:acf_diff}
+\end{figure}
+
+
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Unit root test results for first-differenced VIX series}
+\label{tab:unitroot}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{test} & \textbf{stat} & \textbf{pvalue} & \textbf{usedlag} \\
+\midrule
+ADF (constant) & -14.1001 & $2.62\times10^{-26}$ & 13 \\
+KPSS (constant) & 0.0448 & $1.00\times10^{-1}$ & 22 \\
+ADF (constant + trend) & -14.1009 & $8.93\times10^{-22}$ & 13 \\
+KPSS (constant + trend) & 0.0277 & $1.00\times10^{-1}$ & 22 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+The ADF rejects the unit root for the differenced series while KPSS gives mixed signals for the level series. Based on ACF/PACF behavior and tests, first differencing was used in ARIMA modeling (i.e., \(d=1\)) \cite{box1976}.
+
+\section{ARIMA Model Selection and Residual Diagnostics}
+Candidate ARIMA models were fitted to the raw series with \(d=1\). Model selection used AIC and BIC. The candidate results are summarized in Table \ref{tab:arima_comparison}.
+
+\begin{table}[ht]
+\centering
+\caption{ARIMA model comparison}
+\label{tab:arima_comparison}
+\begin{tabular}{llrr}
+\toprule
+\textbf{model} & \textbf{AIC} & \textbf{BIC} \\
+\midrule
+ARIMA(5,1,5) & 6245.966187 & 6306.568874 \\
+ARIMA(3,1,3) & 6251.975664 & 6290.541010 \\
+ARIMA(2,1,2) & 6252.326762 & 6279.873438 \\
+ARIMA(0,1,5) & 6261.079314 & 6294.135326 \\
+ARIMA(5,1,0) & 6264.521898 & 6297.577910 \\
+ARIMA(0,1,0) & 6277.095098 & 6282.604433 \\
+ARIMA(1,1,1) & 6279.522159 & 6296.050165 \\
+ARIMA(2,1,0) & 6281.058157 & 6297.586163 \\
+ARIMA(0,1,2) & 6281.058243 & 6297.586249 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ARIMA(5,1,5) had the lowest AIC, while ARIMA(3,1,3) and ARIMA(2,1,2) had the next lowest values. Since the ARIMA(2,1,2) had a much lower BIC and AIC difference with the top is quite small, ARIMA(2,1,2) was selected for residual diagnostics and forecasting.
+
+\subsection{Residual diagnostics}
+We do Ljung-Box residual checks on ARIMA(2,1,2) (Table \ref{tab:ljung_box}). Our goal here is to see whether our model captures the ARMA structure adequately.
+
+\begin{table}[tb]
+\centering
+\small
+\caption{Ljung-Box test on ARIMA residuals (selected lags)}
+\label{tab:ljung_box}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Lag} & \textbf{LB stat} & \textbf{p-value} \\
+\midrule
+2 & 1.177691 & 0.554967 \\
+4 & 1.438403 & 0.837494 \\
+6 & 9.876158 & 0.129965 \\
+8 & 10.765663 & 0.215334 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Based on the table results, there is no evidence of significant autocorrelation in the residuals up to lag 8, so the ARIMA(2,1,2) model appears adequate with respect to residual autocorrelation.
+
+
+\subsection{Forecasting using ARIMA(2,1,2)}
+A simple 6-day holdout forecast was produced using ARIMA(2,1,2) to check the forecast behavior (Figure \ref{fig:arima_holdout}).
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\columnwidth]{images/6days_ARIMA_forecast.png}
+  \caption{Simple 6-day holdout forecast using ARIMA(2,1,2) on the test set. This is an intermediate diagnostic distinct from the final rolling-origin evaluation with 1-day horizon.}
+  \label{fig:arima_holdout}
+\end{figure}
+
+
+\section{Testing for heavy tails and conditional heteroskedasticity}
+We observed massive residual spikes in 2022 and 2025. We tested if these shocks had a predictable memory (Volatility Clustering). We examine the residuals of our ARIMA(2,1,2) model. We want to know if the size of the errors in 2022 and 2025 is constant or if the variance changes over time.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\columnwidth]{images/fat_tails_test.png}
+  \caption{Residual diagnostics for ARIMA(2,1,2): histogram of squared residuals showing heavy tails.}
+  \label{fig:resid_diag}
+\end{figure}
+
+Doing the Jarque–Bera results show extremely strong rejection of normality (Table \ref{tab:jb_test}).
+
+\begin{table}[ht]
+\centering
+\caption{Jarque–Bera test results}
+\label{tab:jb_test}
+\begin{tabular}{l r}
+\hline
+\textbf{Statistic} & \textbf{Value} \\
+\hline
+JB stat & 162154.5114 \\
+JB p-value & 0.0 \\
+JB skew & 2.1006 \\
+JB kurtosis & 48.9741 \\
+\hline
+\end{tabular}
+\end{table}
+
+the JB statistic (162,154.51) and p-value $\approx$ 0 indicate an overwhelming departure from Gaussianity. The residuals are positively skewed (skew = 2.10) and exhibit extremely high kurtosis (48.97), implying a pronounced right tail and a much higher frequency of extreme values than under a normal distribution \cite{cont2001}.
+
+
+\subsection{Heteroskedasticity test (ARCH-LM)}
+We also test for conditional heteroskedasticity using the ARCH-LM test on the squared residuals (Table \ref{tab:arch_lm}).
+
+\begin{table}[ht]
+\centering
+\caption{ARCH-LM test on squared residuals}
+\label{tab:arch_lm}
+\begin{tabular}{l r}
+\hline
+\textbf{Statistic} & \textbf{Value} \\
+\hline
+LM stat & 145.192306 \\
+LM p-value & 2.181456e-30 \\
+F stat & 39.332838 \\
+F p-value & 1.260437e-31 \\
+lags & 5 \\
+\hline
+\end{tabular}
+\end{table}
+
+The ARCH-LM test statistic (145.19) and p-value ($2.18\times10^{-30}$) indicate strong evidence of conditional heteroskedasticity in the residuals, suggesting that the variance of the errors is not constant over time and may be predictable based on past squared errors.
+
+
+
+\section{GARCH Model Selection}
+
+Given the evidence of significant conditional heteroskedasticity in the ARIMA residuals, we fit multiple volatility models to capture the time-varying variance. We estimate nine candidate models on the ARIMA(2,1,2) residuals, varying the distribution (normal, t, skewed-t), model type (GARCH, GJR-GARCH, EGARCH), and lag orders. The results ranked by AIC are presented in Table~\ref{tab:garch_models}.
+
+\begin{table}[h]
+\centering
+\caption{GARCH Model Comparison}
+\label{tab:garch_models}
+\begin{tabular}{llll}
+\hline
+Model & Distribution & AIC & BIC \\
+\hline
+GJR-GARCH(1,1) & t & 4766.73 & 4794.28 \\
+GARCH(1,1) & skewt & 4763.89 & 4791.44 \\
+GARCH(1,1) & t & 4787.84 & 4809.88 \\
+EGARCH(1,1) & t & 4804.94 & 4826.97 \\
+GARCH(5,1) & normal & 5435.09 & 5473.66 \\
+ARCH(5) & normal & 5459.96 & 5493.02 \\
+GARCH(1,2) & normal & 5489.30 & 5511.33 \\
+GARCH(2,1) & normal & 5502.44 & 5524.48 \\
+GARCH(1,1) & normal & 5506.36 & 5522.89 \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Model Selection}: GJR-GARCH(1,1) with Student-t distribution is selected based on the lowest AIC. The GJR (Glosten--Jagannathan--Runkle) specification allows the conditional variance to respond asymmetrically to positive and negative shocks, which is important for capturing the dynamics of financial volatility indices like the VIX. The Student-t distribution accounts for the heavy tails observed in financial returns, providing better fits than the standard normal distribution.
+
+\subsection{Diagnostic Testing of Standardized Residuals}
+
+Following model estimation, we perform diagnostic tests on the squared standardized residuals to verify adequate model specification. An ARCH-LM test is applied to confirm the absence of remaining volatility clustering:
+
+\begin{table}[h]
+\centering
+\caption{ARCH-LM Test on GJR-GARCH(1,1) Standardized Residuals}
+\label{tab:arch_lm_final}
+\begin{tabular}{ll}
+\hline
+Statistic & Value \\
+\hline
+LM Statistic & 5.669 \\
+LM p-value & 0.225 \\
+F Statistic & 1.418 \\
+F p-value & 0.226 \\
+Lags Tested & 5 \\
+\hline
+\end{tabular}
+\end{table}
+
+The non-significant ARCH-LM test (p-value $\approx 0.225 \gg 0.05$) indicates no remaining ARCH effects in the squared standardized residuals. This demonstrates that the GJR-GARCH(1,1) specification has successfully captured the volatility clustering present in the ARIMA residuals, validating the adequacy of the volatility model for forecasting applications.
+
+\section{Forecasting Methodology}
+
+With the ARIMA(2,1,2)-GJR-GARCH(1,1) model selected, we implement a rolling forecast evaluation to assess the model's predictive performance. The forecasting procedure combines the ARIMA component for mean prediction with the GJR-GARCH component for volatility prediction, constructing prediction intervals using the Student-t distribution \cite{bollerslev1986}.
+
+\subsection{Rolling Forecast Implementation}
+
+The forecasting is performed using a rolling window approach with a 1-day forecast horizon. At each step, the model is re-estimated using all available historical data up to the current point, then forecasts are generated for the next day. This process is repeated throughout the test period, providing a comprehensive out-of-sample evaluation.
+
+The forecasting procedure follows these steps:
+
+\begin{algorithm}
+\caption{Rolling ARIMA-GJR-GARCH Forecasting Procedure}
+\label{alg:forecast_procedure}
+\begin{algorithmic}
+\STATE Fit ARIMA$(p,d,q)$ on training window
+\STATE Extract residuals $\epsilon_t$ from ARIMA
+\STATE Fit GJR-GARCH$(p,o,q)$ on $\epsilon_t$
+\STATE Generate ARIMA forecasts $\hat{y}_{t+h}$
+\STATE Generate GJR-GARCH variance forecasts $\hat{\sigma}_{t+h}^2$
+\STATE Construct 95\% PIs: $\hat{y}_{t+h} \pm t_{\alpha/2,\nu} \cdot \sqrt{\hat{\sigma}_{t+h}^2}$
+\STATE Store forecasts and update training window
+\end{algorithmic}
+\end{algorithm}
+
+The implementation uses the following key components:
+
+\begin{itemize}
+\item \textbf{ARIMA Forecasting}: The SARIMAX model generates point forecasts for the conditional mean.
+\item \textbf{GJR-GARCH Forecasting}: The fitted GJR-GARCH model provides conditional variance forecasts.
+\item \textbf{Prediction Intervals}: Using the Student-t distribution with estimated degrees of freedom, prediction intervals are constructed at the 95\% confidence level.
+\item \textbf{Progress Tracking}: A progress bar monitors the forecasting process across multiple rolling windows.
+\end{itemize}
+
+\subsection{Evaluation Metrics}
+
+The forecast accuracy is evaluated using multiple metrics:
+
+\begin{itemize}
+\item \textbf{MAE (Mean Absolute Error)}: Average absolute forecast error.
+\item \textbf{RMSE (Root Mean Squared Error)}: Square root of average squared forecast error.
+\item \textbf{MAPE (Mean Absolute Percentage Error)}: Average absolute percentage error.
+\item \textbf{PI Coverage}: Proportion of actual values within prediction intervals.
+\end{itemize}
+
+\subsection{Forecast Results}
+
+The rolling forecast evaluation yields the following performance metrics:
+
+\begin{table}[h]
+\centering
+\caption{Forecast Performance Metrics}
+\label{tab:forecast_metrics}
+\begin{tabular}{ll}
+\hline
+Metric & Value \\
+\hline
+RMSE & 1.877 \\
+MAPE (\%) & 4.180 \\
+PI Coverage (99\%) & 0.992 \\
+Number of Forecasts & 366 \\
+\hline
+\end{tabular}
+\end{table}
+
+The RMSE of 1.877 indicates a reasonable level of forecast accuracy for daily VIX values, while the MAPE of 4.18\% suggests that the forecasts are on average within 4.18\% of the actual values. The high PI coverage of 99.2\% demonstrates that the model's prediction intervals are well-calibrated, capturing the true values within the intervals at the expected rate.
+
+
+The forecast results are visualized in Figure~\ref{fig:test_forecast}, showing the actual VIX values, point forecasts, and 99\% prediction intervals over the test period.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\columnwidth]{images/test_data_forecast.png}
+\caption{Rolling Forecast Results: Actual vs Predicted VIX with 99\% Prediction Intervals}
+\label{fig:test_forecast}
+\end{figure}
+
+The visualization demonstrates the model's ability to track volatility movements while providing uncertainty quantification through prediction intervals.
+
+\cite{c:83}
+
+
+\bigskip
+\bibliography{aaai2026}
+
+\end{document}
